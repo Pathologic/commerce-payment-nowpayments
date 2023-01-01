@@ -1,4 +1,4 @@
-# commerce-payments-nowpayments
+# Online crypto payments by NOWPayments for Commerce
 [https://nowpayments.io/](NOWPayments) integration for Commerce
 
 Currency in the test mode is set to USD.
