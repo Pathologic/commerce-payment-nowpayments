@@ -14,7 +14,6 @@ class Nowpayments extends Payment
         $this->debug = $this->getSetting('debug') == '1';
         $test = $this->getSetting('test');
         $this->test = $test == 1;
-
     }
 
     public function getMarkup()
@@ -42,6 +41,7 @@ class Nowpayments extends Payment
             'cancel_url' => MODX_SITE_URL . 'commerce/nowpayments/payment-failed',
             'success_url' => MODX_SITE_URL . 'commerce/nowpayments/payment-success?paymentHash=' . $payment['hash'],
             'order_description' => $this->lang['nowpayments.order_description'] . ' ' . $order['id'],
+            'is_fee_paid_by_user' => $this->getSetting('fee_paid_by_user') == 1
         ];
         try {
             $response = $this->request('invoice', $data);
